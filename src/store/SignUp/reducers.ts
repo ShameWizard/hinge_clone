@@ -1,23 +1,25 @@
 import {
-    signUpSuccessType,
-    signUpSuccessAction,
-    signUpPayload
+    signUpSuccess,
+    SIGNUPSUCCESS,
+    signUpPayload,
+    signUpState,
 } from './types'
 
 const initialState: signUpState = {
-    loggedIn: true,
-    email: '',
-    password: ''
+    loggedIn: false,
+    email: ''
 }
 
 export function signUpReducer (
     state = initialState,
-    actions: signUp,
+    actions: signUpSuccess,
     ): signUpState {
         switch (actions.type) {
-            case signUpSuccessAction: 
+        case SIGNUPSUCCESS: 
             return {
-                email: [...state, email: email]
+                email: actions.payload.email,
+                loggedIn: true
             }
         }
     }
+

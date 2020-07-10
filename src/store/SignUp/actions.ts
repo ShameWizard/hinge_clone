@@ -1,8 +1,8 @@
-import {signUpSuccessAction, signUpPayload, signUpSuccessType} from './types'
+import {SIGNUPSUCCESS, signUpPayload, signUpSuccess} from './types'
 
-export function signUp(newPayload: signUpPayload): signUpSuccessAction {
+export function signUp(newPayload: signUpPayload): signUpSuccess {
     return {
-        type: signUpSuccessType,
+        type: SIGNUPSUCCESS,
         payload: newPayload
     }
 }

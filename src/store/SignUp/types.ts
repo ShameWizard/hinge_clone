@@ -1,11 +1,16 @@
-export const signUpSuccessType = 'signUpSuccess'
+export const SIGNUPSUCCESS = 'SIGNUPSUCCESS'
 
 export interface signUpPayload {
-    Email: 'string',
-    password: 'string',
+    email: string,
 }
-export interface signUpSuccessAction {
-    type: typeof signUpSuccessType
+export interface signUpState {
+    email: string,
+    loggedIn: boolean
+}
+export interface signUpSuccess {
+    type: typeof SIGNUPSUCCESS
     payload: signUpPayload
 }
+
+
 

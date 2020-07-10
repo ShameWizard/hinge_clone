@@ -1,11 +1,15 @@
 import React, {FunctionComponent, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { signUp } from '../store/SignUp/actions'
+import { Redirect } from 'react-router-dom'
 
 type SignUpProps = {}
+const dispatch = useDispatch()
 
 const SignUp:FunctionComponent<SignUpProps> = () => {
     const [attemptedEmail, setEmail] = useState('')
     const [attemptedPassword, setPassword] = useState('')
+    const [loggedIn, setLoggedIn] = useState(false)
 
     const signUpHandler: any = async (evt: any) => {
         evt.preventDefault()
@@ -16,8 +20,12 @@ const SignUp:FunctionComponent<SignUpProps> = () => {
         const body = await response.text();
         const parsed = JSON.parse(body);
         if (!parsed.success) return alert(parsed.message)
-        
+        dispatch(signUp({email: attemptedEmail}))
+
     }
+    if (loggedIn === true) return (
+        <Redirect to={'/home'} />
+    )
     return (
         <div>
             <form onSubmit={signUpHandler()}>
