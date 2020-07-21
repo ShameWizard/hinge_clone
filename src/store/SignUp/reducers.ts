@@ -12,14 +12,17 @@ const initialState: signUpState = {
 
 export function signUpReducer (
     state = initialState,
-    actions: signUpSuccess,
+    action: signUpSuccess,
     ): signUpState {
-        switch (actions.type) {
+        switch (action.type) {
         case SIGNUPSUCCESS: 
             return {
-                email: actions.payload.email,
+                ...state,
+                email: action.payload.email,
                 loggedIn: true
             }
+        default:            
+        return state
         }
     }
 
