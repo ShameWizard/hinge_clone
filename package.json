@@ -2,19 +2,21 @@
   "name": "hinge-clone",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:4000",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "@types/express": "^4.17.7",
     "@types/jest": "^24.9.1",
+    "@types/mongodb": "^3.5.25",
+    "@types/multer": "^1.4.3",
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.5",
-    "cookie-parser": "^1.4.5",
-    "express": "^4.17.1",
-    "mongodb": "^3.5.9",
-    "multer": "^1.4.2",
+    "@types/sha1": "^1.1.2",
+    "@types/validator": "^13.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -22,7 +24,6 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "sha1": "^1.1.1",
     "tslib": "^2.0.0",
     "typescript": "^3.7.5"
   },
@@ -49,7 +50,14 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^12.12.47",
-    "tslint": "^6.1.2"
+    "@types/node": "^12.12.51",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9",
+    "multer": "^1.4.2",
+    "prettier": "^2.0.5",
+    "sha1": "^1.1.1",
+    "tslint": "^6.1.2",
+    "validator": "^13.1.1"
   }
 }

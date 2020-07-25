@@ -1,7 +1,8 @@
 import React, {FunctionComponent, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { signUp } from '../store/SignUp/actions'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
+
 
 
 type SignUpProps = {}
@@ -16,17 +17,18 @@ const dispatch = useDispatch()
     const signUpHandler = async (evt: React.FormEvent) : Promise<void> => {
         evt.preventDefault()
         let data = new FormData
-        data.append('Email', attemptedEmail);
-        data.append('Password', attemptedPassword)
+        data.append('email', attemptedEmail);
+        data.append('password', attemptedPassword)
         const response = await fetch('/signup', {method: "POST", body: data})
         const body = await response.text();
         console.log(body)
         const parsed = JSON.parse(body);
         console.log(parsed)
         if (!parsed.success) return alert(parsed.message)
-        dispatch(signUp({email: attemptedEmail}))
+        dispatch(signUp(parsed.profile))
 
     }
+    
     if (loggedIn === true) return (
         <Redirect to={'/profile'} />
     )
@@ -40,6 +42,7 @@ const dispatch = useDispatch()
             <input placeholder='Password' onChange={e => setPassword(e.target.value)} type='text'/>
             <input type='submit'/>
             </form>
+            <Link to='/login'>Already have an account? Click here!</Link>
         </div>
     )
 }

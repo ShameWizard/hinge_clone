@@ -1,5 +1,70 @@
+/*1 WELCOME PAGE SECTION */
+
+.logoWrap {
+  width: 250px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.flavorTitle {
+  margin: 0px;
+}
+.centerDiv {
+  display: flex;
+  justify-content: center;
+  width: 250px;
+}
+.welcomeLogo {
+  width: 230px;
+}
+.welcomeParagraph {
+  width: 200px;
+  text-align: center;
+  font-size: 0.5em;
+}
+.btnWrap {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  margin: 5px;
+  border: 1px solid rgb(100, 11, 151);
+  background-color: rgb(100, 11, 151);
+  color: white;
+  width: 200px;
+  text-decoration: none;
+  border-radius: 0.8em;
+  text-justify: center;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.white {
+  background-color: white;
+  color: rgb(100, 11, 151);
+  border: 1px solid black;
+}
+
+/* 2 */
+
+
+
+
+
 body {
-  margin: 0;
+  border: 1px solid black;
+  max-width: 250px;
+  width: 250px;
+  height: 500px;
+  max-height: 500px;
+  margin-top: 75px;
+  margin-left: 500px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
